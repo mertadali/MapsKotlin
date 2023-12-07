@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.mertadali.mapsactivity.databinding.ActivityMapsBinding
 
@@ -29,6 +30,8 @@ private lateinit var locationListener: LocationListener
 private lateinit var activityResultLauncher: ActivityResultLauncher<String>
 private lateinit var sharedPreferences: SharedPreferences             // -> !bilinen son konum mevcut konuma eşit olabilir o yüzden bir kereliğine mahsus kaydetmek için kullanacağız.!
 private var trackBoolean : Boolean? = null
+    private var selectedLatitude : Double? = null
+    private var selectedLongitude : Double? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -147,6 +150,11 @@ private var trackBoolean : Boolean? = null
     }
 
     override fun onMapLongClick(p0: LatLng) {
+        mMap.clear()
+        mMap.addMarker(MarkerOptions().position(p0))
+
+        selectedLatitude = p0.latitude
+        selectedLongitude = p0.longitude
 
     }
 
