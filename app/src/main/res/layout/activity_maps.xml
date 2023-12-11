@@ -21,7 +21,7 @@
         map:layout_constraintBottom_toTopOf="@+id/placeName"
         map:layout_constraintTop_toTopOf="parent"
         map:layout_constraintVertical_bias="0.195"
-        tools:context=".MapsActivity"
+        tools:context=".view.MapsActivity"
         tools:ignore="MissingConstraints"
         tools:layout="@layout/support_simple_spinner_dropdown_item"
         tools:layout_editor_absoluteX="12dp" />
