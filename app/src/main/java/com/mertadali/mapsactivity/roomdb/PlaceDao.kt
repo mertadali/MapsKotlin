@@ -16,7 +16,7 @@ import io.reactivex.rxjava3.core.Flowable
 
 interface PlaceDao {
 
-   @Query("SELECT * FROM Place")
+   @Query(value = "SELECT * FROM Place")
     fun getAll() : Flowable<List<Place>>
 
 

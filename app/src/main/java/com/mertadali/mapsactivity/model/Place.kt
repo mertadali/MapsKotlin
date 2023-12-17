@@ -27,7 +27,8 @@ data class Place(
     var latitude: Double,
 
     @ColumnInfo(name = "longitude")
-    var longitude : Double){
+    var longitude : Double) : java.io.Serializable
+   {
 
 
     @PrimaryKey(autoGenerate = true)
